@@ -19,7 +19,14 @@ namespace Lab5DrawLab1
 
         private void MainButton_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var client = new SolidWorksClient();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }
