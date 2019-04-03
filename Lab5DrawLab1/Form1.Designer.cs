@@ -7,6 +7,9 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        private System.Windows.Forms.Button mainButton;
+        private System.Windows.Forms.Label label1;
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -29,16 +32,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mainButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // mainButton
+            // 
+            this.mainButton.Location = new System.Drawing.Point(256, 56);
+            this.mainButton.Name = "mainButton";
+            this.mainButton.Size = new System.Drawing.Size(75, 23);
+            this.mainButton.TabIndex = 0;
+            this.mainButton.Text = "Построить";
+            this.mainButton.UseVisualStyleBackColor = true;
+            this.mainButton.Click += new System.EventHandler(this.MainButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(571, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Для построения чертежа откройте SolidWorks и выберите создание нового чертежа. На" +
+    "жмите на кнопку ниже";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 313);
+            this.ClientSize = new System.Drawing.Size(598, 91);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mainButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Лаб. №5 часть 1, Багиров Р.А., гр. 10701116";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

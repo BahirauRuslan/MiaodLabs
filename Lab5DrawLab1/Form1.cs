@@ -16,5 +16,10 @@ namespace Lab5DrawLab1
         {
             this.InitializeComponent();
         }
+
+        private void MainButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
