@@ -21,7 +21,7 @@ namespace Lab5DrawLab1
         {
             try
             {
-                var client = new SolidWorksClient();
+                var client = SolidWorksClient.GetInstance();
             }
             catch (Exception exception)
             {
