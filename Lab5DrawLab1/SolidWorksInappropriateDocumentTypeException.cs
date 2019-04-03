@@ -11,5 +11,10 @@ namespace Lab5DrawLab1
         public SolidWorksInappropriateDocumentTypeException(string message) : base(message)
         {
         }
+
+        public SolidWorksInappropriateDocumentTypeException(
+            string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

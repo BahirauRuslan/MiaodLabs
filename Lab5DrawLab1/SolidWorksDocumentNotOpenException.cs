@@ -11,5 +11,10 @@ namespace Lab5DrawLab1
         public SolidWorksDocumentNotOpenException(string message) : base(message)
         {
         }
+
+        public SolidWorksDocumentNotOpenException(
+            string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

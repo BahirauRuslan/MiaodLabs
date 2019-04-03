@@ -38,9 +38,9 @@ namespace Lab5DrawLab1
             {
                 SwApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             }
-            catch
+            catch (COMException e)
             {
-                throw new SolidWorksNotRunningException("Не удалось найти запущенный Solidworks!");
+                throw new SolidWorksNotRunningException("Не удалось найти запущенный Solidworks!", e);
             }
         }
 
