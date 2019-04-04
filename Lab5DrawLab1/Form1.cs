@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SolidWorks.Interop.swconst;
 
 namespace Lab5DrawLab1
 {
@@ -14,7 +15,7 @@ namespace Lab5DrawLab1
         {
             try
             {
-                var client = SolidWorksClient.GetInstance();
+                var client = new SolidWorksClient(swDocumentTypes_e.swDocDRAWING);
                 Lab1Drawing.Draw(client);
             }
             catch (Exception exception)

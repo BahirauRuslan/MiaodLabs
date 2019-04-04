@@ -54,6 +54,7 @@
             this.mainButton.TabIndex = 1;
             this.mainButton.Text = "Построить";
             this.mainButton.UseVisualStyleBackColor = true;
+            this.mainButton.Click += new System.EventHandler(this.MainButton_Click);
             // 
             // Form1
             // 

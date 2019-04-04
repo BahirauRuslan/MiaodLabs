@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 
@@ -7,16 +6,15 @@ namespace Lab5DrawLab1
 {
     public sealed class SolidWorksClient
     {
-        private static readonly Lazy<SolidWorksClient> LAZY = new Lazy<SolidWorksClient>(() => new SolidWorksClient());
-
-        private SolidWorksClient()
+        public SolidWorksClient(swDocumentTypes_e docType)
         {
             SetSwApp();
             ActiveDocValidate();
             SwModel = (ModelDoc2)SwApp.ActiveDoc;
             SwSketchManager = SwModel.SketchManager;
             SwSelMgr = (SelectionMgr)SwModel.SelectionManager;
-            DocTypeValidate();
+            SwFM = SwModel.FeatureManager;
+            DocTypeValidate(docType);
         }
 
         public SldWorks SwApp { get; private set; }
@@ -27,10 +25,7 @@ namespace Lab5DrawLab1
 
         public SelectionMgr SwSelMgr { get; private set; }
 
-        public static SolidWorksClient GetInstance()
-        {
-            return LAZY.Value;
-        }
+        public FeatureManager SwFM { get; private set; }
 
         private void SetSwApp()
         {
@@ -52,11 +47,11 @@ namespace Lab5DrawLab1
             }
         }
 
-        private void DocTypeValidate()
+        private void DocTypeValidate(swDocumentTypes_e docType)
         {
-            if (SwModel.GetType() != (int)swDocumentTypes_e.swDocDRAWING)
+            if (SwModel.GetType() != (int)docType)
             {
-                throw new SolidWorksInappropriateDocumentTypeException("Открытый документ должен быть типа чертёж");
+                throw new SolidWorksInappropriateDocumentTypeException("Открытый документ должен иметь другой тип");
             }
         }
     }
