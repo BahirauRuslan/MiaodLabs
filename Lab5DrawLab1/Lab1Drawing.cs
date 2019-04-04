@@ -37,9 +37,20 @@ namespace Lab5DrawLab1
                 StartPointX + 0.110, 
                 StartPointY + 0.015, 
                 0, 
-                StartPointX, 
-                StartPointY + 0.015, 
+                StartPointX + 0.10283344275,
+                StartPointY + 0.04214703951, 
                 0, 
+                1);
+            client.SwSketchManager.CreateArc(
+                StartPointX + 0.055,
+                StartPointY + 0.015,
+                0,
+                StartPointX + 0.020,
+                StartPointY + 0.05742640687,
+                0,
+                StartPointX,
+                StartPointY + 0.015,
+                0,
                 1);
             client.SwSketchManager.CreateArc(
                 StartPointX + 0.055,
@@ -82,6 +93,12 @@ namespace Lab5DrawLab1
                 StartPointX + 0.040, StartPointY + 0.065, 0, StartPointX + 0.040, StartPointY + 0.095, 0);
             client.SwSketchManager.CreateCenterLine(
                 StartPointX + 0.025, StartPointY + 0.080, 0, StartPointX + 0.055, StartPointY + 0.080, 0);
+
+            client.SwSketchManager.CreateLine(
+                StartPointX + 0.020, StartPointY + 0.05742640687, 0, StartPointX + 0.020, StartPointY + 0.100, 0);
+
+            client.SwSketchManager.CreateLine(
+                StartPointX + 0.070, StartPointY + 0.100, 0, StartPointX + 0.10283344275, StartPointY + 0.04214703951, 0);
         }
     }
 }
